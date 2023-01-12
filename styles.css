@@ -1,0 +1,188 @@
+:root {
+    --blue: #2a99cc;
+    --dark: #1b1b1b;
+}
+
+* {
+    margin: 20;
+    padding: 0;
+}
+
+body {
+    width: 100vw; 
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--blue);
+    background: linear-gradient(to right top, var(--dark), var(--blue));
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    max-height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+    background: rgba(0, 0, 0, 0.75);
+    background: linear-gradient(to right top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.25));
+    padding: 50px 250px;
+    border-radius: 20px;
+    position: relative;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    overflow: auto;
+}
+
+.bg_img {
+    position: absolute;
+   }
+
+.bg_img--pic {
+    top: 0;
+    right: 60%;
+    height: 30vh;
+    animation: slideDown 15s linear infinite;
+}
+
+.bg_img--ph {
+    top: 5vh;
+    left: 60%;
+    height: 35vh;
+    animation: rotate 25s linear infinite;
+}
+
+.bg_img--logo {
+    left: 0;
+    top: 50%;
+    width: 50%;
+    opacity: 0.25;
+    transform: translate(-50%, -50%);
+}
+
+header {
+    flex: 1;
+}
+
+h1 {
+    padding: 24px 0 12px;
+    font-size: 48px;
+}
+
+p {
+    padding-bottom: 12px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 32px;
+}
+
+a {
+    color: var(--blue);
+    text-decoration: none;
+    position: relative;
+}
+
+a:after {
+    content: "";
+    width: 0;
+    height: 3px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--blue);
+    background: linear-gradient(90deg, transparent, var(--blue));
+    transition: width 0.3;
+}
+
+a:hover:after {
+    width: 100%;
+}
+
+.logo {
+    width: 150px;
+    margin-right: 100px;
+}
+
+.logo img {
+    width: 100%;
+}
+
+main {
+    display: flex;
+}
+
+section:first-child {
+    margin-right: 100px;
+}
+
+.person_img {
+    width: 200px;
+    height: 200px;
+    background: var(--blue);
+    border: solid 3px white;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.person_img img {
+    width: 100%;
+}
+
+.person_name {
+    display: block;
+    margin-top: 16px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    background: linear-gradient(90deg, var(--blue), #fff);
+    color: #fff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+button {
+    width: 350 px;
+    margin-top: 32px;
+    padding: 16px 0;
+    font-size: 42px;
+    font-weight: 700;
+    color: white;
+    background: var(--blue);
+    background: linear-gradient(to right top, var(--blue), rgba(255, 255, 255, 0.6));
+    border: none;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+button:focus {
+    outline: white;
+}
+
+button:after {
+    width: 50px;
+    height: 150%;
+    position: absolute;
+    left: -150px;
+    top: -25px;
+    content: "";
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: rotate(20deg);
+    transition: transform 0.3s;
+}
+
+button:hover:after {
+    transform: translateX(500px) rotate(20deg);
+}
+
+@keyframes slideDown {
+    from {transform: translateY(-30vh)}
+    to {transform: translateY(100vh)}
+}
+
+@keyframes rotate {
+    from {transform: rotate(0deg)}
+    to {transform: rotate(360deg)}
+}
